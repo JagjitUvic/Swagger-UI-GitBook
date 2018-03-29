@@ -1,0 +1,17 @@
+Business Goals for Swagger
+
+| Goal-Object       | Goal                                                                                                                      | Remarks/References                                                           |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| System            | Facilitate the creation, usage and maintenance of APIs.                                                                   | [Swagger Page](https://swagger.io/)                                          |
+| Society/Community | Enroll more individuals in Swagger certification and training classes.                                                    | [Blog](https://swagger.io/blog/introducing-swagger-training-certification/)  |
+| Portfolio         | Keeping repositories for videos/recording from conferences and meetups.                                                   | [Blog](https://swagger.io/blog/welcome-to-the-swagger-io-evolution/)         |
+| Society/Community | Recruit Swagger Champions to host conferences and meetups about Swagger.                                                  | [Swagger Page](https://swagger.io/swagger-champions/)                        |
+| System            | Automate API-dependent processes by creating homogenous documentation.                                                    | [Blog](https://blog.readme.io/what-is-swagger-and-why-it-matters/)           |
+| Maintenance       | Simplify testing and debugging API-related problems.                                                                      | [Blog](https://blog.readme.io/what-is-swagger-and-why-it-matters/)           |
+| System            | Improve user retention and usability by providing a clearly mapped out and friendly UI.                                   | [Swagger Page](https://swagger.io/)                                          |
+| Portfolio         | Translating documentation to different languages to make content more applicable to a global audience.                    | [GitHub](https://github.com/swagger-api/swagger-ui/issues/472)               |
+| System            | Supporting Section 508 accessibility standards for universal adaptability.                                                | [GitHub](https://github.com/swagger-api/swagger-ui/issues/2216)              |
+| Portfolio         | Improving Swagger Premium support to help the customers with their business and engineering needs.                        | [Swagger Page](https://swagger.io/swagger-premium-support/)                  |
+|                   | Increase promotion to increase the number of people who know Swagger.                                                     |                                                                              |
+| Organization      | Increase associations with service-based partners to benefit from the business ecosystem that forms around their product. | [Blog](https://swagger.io/blog/integrate-your-slack-with-swagger/)           |
+|                   |                                                                                                                           |                                                                              |

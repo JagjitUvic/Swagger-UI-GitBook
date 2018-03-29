@@ -1,0 +1,415 @@
+> swagger-ui@3.9.3 just-test-in-node /Users/jagjitsingh/Desktop/Spring 2018/Documenting Software Systems/swagger-ui
+> mocha --recursive --compilers js:babel-core/register test/core test/components test/bugs test/swagger-ui-dist-package test/xss
+
+
+
+  curlify
+    ✓ prints a curl statement with custom content-type
+    ✓ does not change the case of header in curl
+    ✓ prints a curl statement with an array of query params
+    ✓ prints a curl statement with an array of query params and auth
+    ✓ prints a curl statement with html
+    ✓ handles post body with html
+    ✓ handles post body with special chars
+    ✓ handles delete form with parameters
+    ✓ should print a curl with formData
+    ✓ should print a curl with formData and file
+    ✓ prints a curl post statement from an object
+    ✓ prints a curl post statement from a string containing a single quote
+
+  oauth2
+    authorize redirect
+      ✓ should build authorize url
+      ✓ should append query paramters to authorizeUrl with query parameters
+
+  auth plugin - selectors
+    definitionsToAuthorize
+      ✓ should return securityDefinitions as a List
+      ✓ should fail gracefully with bad data
+    definitionsForRequirements
+      ✓ should return applicable securityDefinitions as a List
+      ✓ should fail gracefully with bad data
+
+  spec plugin - actions
+    execute
+      - should add `securities` to the oriAction call
+
+  err plugin - tranformers - not of type
+    ✓ should transform a singular not of type(s) error without an inline path
+    ✓ should transform a plural (2) not of type(s) error without an inline path
+    ✓ should transform a plural (3+) not of type(s) error without an inline path
+
+  err plugin - tranformers - parameter oneof
+    parameter.in misuse transformation to fixed value error
+      - should return a helpful error for invalid 'in' values
+    parameter.collectionFormat misuse transformation to fixed value error
+      - should return a helpful error for invalid 'collectionFormat' values
+    Integrations
+      - should return the correct errors when both 'in' and 'collectionFormat' are incorrect
+
+  OAS3 plugin - state
+    action + reducer + selector integration
+      selectedServer
+        ✓ should set and get a global selectedServer
+        ✓ should set and get a namespaced selectedServer
+      serverVariableValue
+        ✓ should set and get a global serverVariableValue
+        ✓ should set and get a namespaced serverVariableValue
+      serverVariables
+        ✓ should set and get global serverVariables
+        ✓ should set and get namespaced serverVariables
+      serverEffectiveValue
+        ✓ should set variable values and compute a URL for a namespaced server
+    selectors
+      serverEffectiveValue
+        ✓ should compute global serverEffectiveValues
+        ✓ should handle multiple variable instances
+
+  oas3 plugin - auth extensions - wrapSelectors
+    execute
+      ✓ should add `securities` to the oriAction call
+
+  sampleFromSchema
+    ✓ returns object with no readonly fields for parameter
+    ✓ returns object with readonly fields for parameter, with includeReadOnly
+    ✓ returns object without writeonly fields for parameter
+    ✓ returns object with writeonly fields for parameter, with includeWriteOnly
+
+  createXMLExample
+    simple types with xml property
+      ✓ returns tag <newtagname>string</newtagname> when passing type string and xml:{name: "newtagname"}
+      ✓ returns tag <test:newtagname>string</test:newtagname> when passing type string and xml:{name: "newtagname", prefix:"test"}
+      ✓ returns tag <test:tagname xmlns:sample="http://swagger.io/schema/sample">string</test:tagname> when passing type string and xml:{"namespace": "http://swagger.io/schema/sample", "prefix": "sample"}
+      ✓ returns tag <test:tagname >string</test:tagname> when passing type string and xml:{"namespace": "http://swagger.io/schema/sample"}
+      ✓ returns tag <newtagname>test</newtagname> when passing default value
+      ✓ returns default value when enum provided
+      ✓ returns example value when provided
+      ✓ sets first enum if provided
+    array
+      ✓ returns tag <tagname>string</tagname> when passing string items
+      ✓ returns tag <animal>string</animal> when passing string items with name
+      ✓ returns tag <animals><animal>string</animal></animals> when passing string items with name
+      ✓ return correct nested wrapped array
+      ✓ return correct nested wrapped array with xml
+      ✓ adds namespace to array
+      ✓ adds prefix to array
+      ✓ adds prefix to array with no xml in items
+      ✓ adds namespace to array with no xml in items
+      ✓ adds namespace to array with wrapped
+      ✓ adds prefix to array with wrapped
+      ✓ returns wrapped array when type is not passed
+      ✓ returns array with default values
+      ✓ returns array with default values with wrapped=true
+      ✓ returns array with default values
+      ✓ returns array with default values with wrapped=true
+      ✓ returns array with example values  with
+      ✓ returns array with example values  with wrapped=true
+    object
+      ✓ returns object with 2 properties
+      ✓ returns object with integer property and array property
+      ✓ returns nested objects
+      ✓ returns object with no readonly fields for parameter
+      ✓ returns object with readonly fields for parameter, with includeReadOnly
+      ✓ returns object without writeonly fields for parameter
+      ✓ returns object with writeonly fields for parameter, with includeWriteOnly
+      ✓ returns object with passed property as attribute
+      ✓ returns object with passed property as attribute with custom name
+      ✓ returns object with example values in attribute
+      ✓ returns object with enum values in attribute
+      ✓ returns object with default values in attribute
+      ✓ returns object with default values in attribute
+      ✓ returns object with example value
+      ✓ returns object with additional props
+      ✓ returns object with additional props =true
+      ✓ returns object with 2 properties with no type passed but properties
+      ✓ returns object with additional props with no type passed
+
+  spec plugin - actions
+    - should call specActions.setResponse, when fn.execute resolves
+    - should call errActions.newErr, if the fn.execute rejects
+    execute
+      - should collect a full request and call fn.executeRequest
+      - should allow passing _extra_ properties to executeRequest
+    executeRequest
+      - should call fn.execute with arg
+      ✓ should pass requestInterceptor/responseInterceptor to fn.execute
+(node:888) UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 1): TypeError: specActions.setResponse is not a function
+(node:888) DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+
+  spec plugin - reducer
+    update operation meta value
+      ✓ should update the operation metadata at the specified key
+      ✓ shouldn't throw an error if we try to update the consumes_value of a null operation
+    set response value
+      ✓ should combine the response and error objects
+
+  spec plugin - selectors
+    parameterValue
+      ✓ should return Map({}) if no path found
+      ✓ should return a hash of [parameterName]: value
+    contentTypeValues
+      ✓ should return { requestContentType, responseContentType } from an operation
+      ✓ should default to the first `produces` array value if current is not set
+      ✓ should default to `application/json` if a default produces value is not available
+      ✓ should prioritize consumes value first from an operation
+      ✓ should fallback to multipart/form-data if there is no consumes value but there is a file parameter
+      ✓ should fallback to application/x-www-form-urlencoded if there is no consumes value, no file parameter, but there is a formData parameter
+      ✓ should return nothing, if the operation does not exist
+    operationScheme
+      ✓ should return the correct scheme for a remote spec that doesn't specify a scheme
+
+  bound system
+    wrapActions
+      ✓ should replace an action
+      ✓ should expose the original action, and the system as args
+      ✓ should support multiple wraps of the same action
+      ✓ should execute wrapActions in the order they appear ( via plugins )
+      ✓ should have a the latest system
+      - should be able to create async actions
+    selectors
+      ✓ should have the first arg be the nested state, and all other args to follow
+      when selector returns a funtcion
+        ✓ should pass the system to that function
+      wrapSelectors
+        ✓ should wrap a selector and provide a reference to the original
+        ✓ should provide a live reference to the system to a wrapper
+        ✓ should provide the state as the first argument to the inner function
+    getComponent
+      ✓ returns a component from the system
+      ✓ allows container components to provide their own `mapStateToProps` function
+      ✓ gives the system and own props as props to a container's `mapStateToProps` function
+    afterLoad
+      ✓ should call a plugin's `afterLoad` method after the plugin is loaded
+      ✓ should call a preset plugin's `afterLoad` method after the plugin is loaded
+      ✓ should call a function preset plugin's `afterLoad` method after the plugin is loaded
+      ✓ should call a registered plugin's `afterLoad` method after the plugin is loaded
+    error catching
+      ✓ should encapsulate thrown errors in an afterLoad method
+      ✓ should encapsulate thrown errors in an action creator
+      ✓ should encapsulate thrown errors in a reducer
+      ✓ should encapsulate thrown errors in a selector
+      ✓ should encapsulate thrown errors in a complex selector
+      ✓ should encapsulate thrown errors in a wrapAction
+      ✓ should encapsulate thrown errors in a wrapSelector
+        ✓ should catch errors thrown inside of React Component Class render methods
+        ✓ should catch errors thrown inside of pure component render methods
+        ✓ should catch errors thrown inside of stateless component functions
+        ✓ should catch errors thrown inside of container components
+
+  wrapComponents
+    ✓ should provide a reference to the system to the wrapper
+    ✓ should wrap correctly when registering more plugins
+    should wrap a component and provide a reference to the original
+      ✓ with stateless components
+      ✓ with React classes
+
+  utils
+    mapToList
+      ✓ should convert a map to a list, setting `key`
+      ✓ should flatten an arbitrarily deep map
+      ✓ should handle an empty map
+    extractFileNameFromContentDispositionHeader
+      ✓ should extract quoted filename
+      ✓ should extract filename
+      ✓ should not extract filename and return null
+    validateMaximum
+      ✓ doesn't return for valid input
+      ✓ returns a message for invalid input
+    validateMinimum
+      ✓ doesn't return for valid input
+      ✓ returns a message for invalid input
+    validateNumber
+      ✓ doesn't return for whole numbers
+      ✓ doesn't return for negative numbers
+      ✓ doesn't return for decimal numbers
+      ✓ returns a message for strings
+      ✓ returns a message for invalid input
+    validateInteger
+      ✓ doesn't return for positive integers
+      ✓ doesn't return for negative integers
+      ✓ returns a message for decimal values
+      ✓ returns a message for strings
+      ✓ returns a message for invalid input
+    validateFile
+      ✓ validates against objects which are instances of 'File'
+    validateDateTime
+      ✓ doesn't return for valid dates
+      ✓ returns a message for invalid input'
+    validateGuid
+      ✓ doesn't return for valid guid
+      ✓ returns a message for invalid input'
+    validateMaxLength
+      ✓ doesn't return for valid guid
+      ✓ returns a message for invalid input'
+    validateMinLength
+      ✓ doesn't return for valid guid
+      ✓ returns a message for invalid input'
+    validatePattern
+      ✓ doesn't return for a match
+      ✓ returns a message for invalid pattern
+      ✓ fails gracefully when an invalid regex value is passed
+    validateParam
+      ✓ should check the isOAS3 flag when validating parameters
+      ✓ validates required strings
+      ✓ validates required strings with min and max length
+      ✓ validates optional strings
+      ✓ validates required files
+      ✓ validates optional files
+      ✓ validates required arrays
+      ✓ validates optional arrays
+      ✓ validates required booleans
+      ✓ validates optional booleans
+      ✓ validates required numbers
+      ✓ validates optional numbers
+      ✓ validates required integers
+      ✓ validates optional integers
+    fromJSOrdered
+      ✓ should create an OrderedMap from an object
+      ✓ should not use an object's length property for Map size
+      ✓ should create an OrderedMap from an array
+    getAcceptControllingResponse
+      ✓ should return the first 2xx response with a media type
+      ✓ should skip 2xx responses without defined media types
+      ✓ should default to the `default` response if it has defined media types
+      ✓ should return null if there are no suitable controlling responses
+      ✓ should return null if an empty OrderedMap is passed
+      ✓ should return null if anything except an OrderedMap is passed
+    createDeepLinkPath
+      ✓ creates a deep link path replacing spaces with underscores
+      ✓ trims input when creating a deep link path
+      ✓ creates a deep link path with special characters
+      ✓ returns an empty string for invalid input
+    escapeDeepLinkPath
+      ✓ creates and escapes a deep link path
+      ✓ escapes a deep link path that starts with a number
+      ✓ escapes a deep link path with a class selector
+      ✓ escapes a deep link path with an id selector
+    sanitizeUrl
+      ✓ should sanitize a `javascript:` url
+      ✓ should sanitize a `data:` url
+      ✓ should not modify a `http:` url
+      ✓ should not modify a `https:` url
+      ✓ should gracefully handle empty strings
+      ✓ should gracefully handle non-string values
+
+  <JsonSchemaForm/>
+    strings
+      ✓ should render the correct options for a string enum parameter
+      ✓ should render the correct options for a required string enum parameter
+    booleans
+Warning: Failed prop type: Invalid prop `allowedValues` of type `object` supplied to `Select`, expected `array`.
+    in Select (created by JsonSchema_boolean)
+    in JsonSchema_boolean (created by JsonSchemaForm)
+    in JsonSchemaForm
+      ✓ should render the correct options for a boolean parameter
+      ✓ should render the correct options for a required enum boolean parameter
+    unknown types
+      ✓ should render unknown types as strings
+      ✓ should render unknown types as strings when a format is passed
+
+  <LiveResponse/>
+    ✓ passes mutatedRequest to Curl when showMutatedRequest = true
+    ✓ passes request to Curl when showMutatedRequest = false
+
+  Markdown component
+    Swagger 2.0
+      ✓ allows span elements with class attrib
+      ✓ allows td elements with colspan attrib
+      ✓ allows image elements
+      ✓ allows heading elements
+      ✓ allows links
+    OAS 3
+      ✓ allows image elements
+      ✓ allows heading elements
+
+  <ModelExample/>
+Warning: Failed prop type: Required prop `specPath` was not specified in `ModelExample`.
+    in ModelExample
+Warning: Failed prop type: The prop `layoutSelectors` is marked as required in `ModelWrapper`, but its value is `undefined`.
+    in ModelWrapper
+    ✓ renders model and example tabs
+    ✓ example tab is selected if isExecute = true and defaultModelRendering = model
+    ✓ example tab is selected if isExecute = true and defaultModelRendering = example
+    ✓ example tab is selected if isExecute = false and defaultModelRendering = example
+    ✓ example tab is selected if isExecute = true and defaultModelRendering = othervalue
+    ✓ example tab is selected if isExecute = false and defaultModelRendering = othervalue
+    ✓ model tab is selected if isExecute = false and defaultModelRendering = model
+    ✓ passes defaultModelExpandDepth to ModelComponent
+
+  <Models/>
+    ✓ passes defaultModelsExpandDepth to ModelWrapper
+
+  <ObjectModel />
+Warning: Failed prop type: Invalid prop `schema` of type `Immutable.Map` supplied to `Model`, expected `OrderedMap`.
+    in Model
+    ✓ renders a collapsible header
+    ✓ renders the object properties in order
+
+  <Operation/>
+    - blanket tests
+
+  <Operations/>
+    ✓ should render a Swagger2 `get` method, but not a `trace` or `foo` method
+    ✓ should render an OAS3 `get` and `trace` method, but not a `foo` method
+
+  <PrimitiveModel/>
+    Model name
+Warning: React.createElement: type is invalid -- expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in.
+Warning: React.createElement: type is invalid -- expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in.
+      ✓ renders the schema's title
+      ✓ falls back to the passed-in `name` prop for the title
+
+  <Response />
+Warning: Failed prop type: The prop `getConfigs` is marked as required in `Response`, but its value is `undefined`.
+    in Response
+Warning: Failed prop type: Required prop `specPath` was not specified in `Response`.
+    in Response
+Warning: Failed prop type: The prop `getConfigs` is marked as required in `ModelExample`, but its value is `undefined`.
+    in ModelExample
+    ✓ renders the model-example schema properties in order
+
+  <Schemes/>
+Warning: Failed prop type: The prop `currentScheme` is marked as required in `Schemes`, but its value is `undefined`.
+    in Schemes
+    ✓ calls props.specActions.setScheme() when no currentScheme is selected
+    ✓ doesn't call props.specActions.setScheme() when schemes hasn't changed
+
+  UI-3199: Sanitized Markdown causing code examples to be double escaped
+    ✓ should single-escape quotes
+
+  UI-3279: Empty Markdown inputs causing bare `undefined` in output
+Warning: Failed prop type: The prop `source` is marked as required in `Markdown`, but its value is `null`.
+    in Markdown
+    ✓ should return no text for `null` as source input
+Warning: Failed prop type: The prop `source` is marked as required in `Markdown`, but its value is `undefined`.
+    in Markdown
+    ✓ should return no text for `undefined` as source input
+    ✓ should return no text for empty string as source input
+
+  swagger-ui-dist
+    getAbsoluteFSPath
+      ✓ returns absolute path
+
+  <Info/> Sanitization
+    ✓ renders sanitized .title content
+    ✓ renders sanitized .description content
+
+  Markdown Script Sanitization
+    Swagger 2.0
+      ✓ sanitizes <script> elements
+      ✓ sanitizes <img> elements
+    OAS 3
+      ✓ sanitizes <script> elements
+      ✓ sanitizes <img> elements
+
+
+  238 passing (521ms)
+  11 pending
+
+-----------------|----------|----------|----------|----------|-------------------|
+File             |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
+-----------------|----------|----------|----------|----------|-------------------|
+All files        |        0 |        0 |        0 |        0 |                   |
+ all.js          |        0 |        0 |        0 |        0 |     3,5,6,7,15,16 |
+ download-url.js |        0 |        0 |        0 |        0 |... 53,59,62,64,68 |
+-----------------|----------|----------|----------|----------|-------------------|
